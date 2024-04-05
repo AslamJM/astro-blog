@@ -2,6 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import HomeImage from '../images/astro-logo-dark.png'
+import Paragraph from '../components/ui/Paragraph.astro';
+
+const content = "Here is where i wrote about the stuff i think i know somewhat to certain degree. Purpose of this site is a learning for myself and educate others. Read and take some knowledge."
+
 ---
 
 <Layout title="Welcome to Astro.">
@@ -9,7 +13,7 @@ import HomeImage from '../images/astro-logo-dark.png'
 		<div class="home">
 			<div class="left">
 				<h3>Welcome to my blog.</h3>
-				<p>Built with Astro. Greatest Framework ever</p>
+				<Paragraph content={content}/>
 			</div>
 			<div class="right">
 				<Image src={HomeImage} alt="Welcome to my blog" width="200"
@@ -46,6 +50,17 @@ import HomeImage from '../images/astro-logo-dark.png'
 
 	.image {
 		width: 300;
+	}
+
+	@media screen and (max-width:768px) {
+		.right {
+			display:none
+		}
+		.left {
+			width: 100%;
+			display: block;
+		}
+		
 	}
 	
 </style>
