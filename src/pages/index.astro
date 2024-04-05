@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import HomeImage from '../images/astro-logo-dark.png'
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<div class="home">
+			<div class="left">
+				<h3>Welcome to my blog.</h3>
+				<p>Built with Astro. Greatest Framework ever</p>
+			</div>
+			<div class="right">
+				<Image src={HomeImage} alt="Welcome to my blog" width="200"
+  height="150"/>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	} 
+
+	.home {
+		display: flex; 
+		align-items: center;
+		justify-content: center;
+	}
+
+	.left,.right {
+		width: 50%;
+		display: flex; 
+		align-items: center;
+		justify-content: center; 
+		flex-direction: column;
+	}
+
+	.image {
+		width: 300;
+	}
+	
+</style>
